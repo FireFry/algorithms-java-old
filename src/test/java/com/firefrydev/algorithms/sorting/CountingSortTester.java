@@ -1,11 +1,12 @@
 package com.firefrydev.algorithms.sorting;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Random;
 
-public abstract class SortingAlgorithmTester extends Assert {
+public class CountingSortTester extends Assert {
     private final Random random = new Random();
 
     @Test
@@ -14,18 +15,8 @@ public abstract class SortingAlgorithmTester extends Assert {
     }
 
     @Test
-    public void test2() {
-        testSorting(10, Integer.MAX_VALUE);
-    }
-
-    @Test
     public void test3() {
         testSorting(100, 10);
-    }
-
-    @Test
-    public void test4() {
-        testSorting(100, Integer.MAX_VALUE);
     }
 
     @Test
@@ -33,20 +24,17 @@ public abstract class SortingAlgorithmTester extends Assert {
         testSorting(100000, 100);
     }
 
-    @Test
-    public void test6() {
-        testSorting(100000, Integer.MAX_VALUE);
-    }
-
     protected void testSorting(int n, int maxValue) {
         int[] a = createRandomArray(n, maxValue);
-        sort(a);
+        sort(a, maxValue);
         for (int i = 0; i < a.length - 1; i++) {
             assertTrue(a[i] <= a[i + 1]);
         }
     }
 
-    protected abstract void sort(int[] a);
+    protected void sort(int[] a, int maxValue) {
+        CountingSort.sort(a, maxValue);
+    }
 
     private int[] createRandomArray(int n, int maxValue) {
         int[] a = new int[n];
