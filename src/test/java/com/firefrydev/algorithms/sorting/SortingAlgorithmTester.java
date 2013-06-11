@@ -40,7 +40,9 @@ public abstract class SortingAlgorithmTester extends Assert {
 
     protected void testSorting(int n, int maxValue) {
         int[] a = createRandomArray(n, maxValue);
+		long time = System.currentTimeMillis();
         sort(a);
+		System.out.println("Sorting time: " + (System.currentTimeMillis() - time));
         for (int i = 0; i < a.length - 1; i++) {
             assertTrue(a[i] <= a[i + 1]);
         }
