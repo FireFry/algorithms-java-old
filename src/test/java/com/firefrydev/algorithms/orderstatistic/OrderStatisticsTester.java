@@ -1,4 +1,4 @@
-package com.firefrydev.algorithms.orderstatistics;
+package com.firefrydev.algorithms.orderstatistic;
 
 import com.firefrydev.algorithms.sorting.QuickSort;
 import org.junit.Assert;
