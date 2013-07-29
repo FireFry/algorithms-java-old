@@ -8,8 +8,8 @@ public class HeapSort {
             heapify(a, i, heapsize);
         }
         while (heapsize > 1) {
-            swap(a, 0, heapsize - 1);
             heapsize--;
+            swap(a, 0, heapsize);
             heapify(a, 0, heapsize);
         }
     }
